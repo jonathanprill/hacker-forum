@@ -1,3 +1,7 @@
+//IMPORTING MODELS
+const User = require('./User');
 const Post = require('./Post');
+const Comment = require('./Comment');
 
-module.exports = { Post };
+
+module.exports = { User, Post, Comment };
