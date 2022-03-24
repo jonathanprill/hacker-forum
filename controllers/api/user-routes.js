@@ -123,9 +123,8 @@ router.post('/logout', (req, res) => {
 });
 
 
-// PUT /api/users/1
+// PUT /api/users/id
 router.put('/:id', (req, res) => {
-    // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
 
     // pass in req.body instead to only update what's passed through
     User.update(req.body, {
@@ -147,7 +146,7 @@ router.put('/:id', (req, res) => {
         });
 });
 
-// DELETE /api/users/1
+// DELETE /api/users/id
 router.delete('/:id', (req, res) => {
     User.destroy({
         where: {
