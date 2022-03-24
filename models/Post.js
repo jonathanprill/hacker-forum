@@ -2,32 +2,45 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 // create our Post model
-class Post extends Model {  }
+class Post extends Model { }
 
+// create fields/columns for Post model
 Post.init(
     {
-        // define columns
         id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
             autoIncrement: true
         },
-        post_title: {
+        title: {
             type: DataTypes.STRING,
             allowNull: false
         },
         post_url: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
+            validate: {
+                isURL: true
+            }
+        },
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'user',
+                key: 'id'
+            }
         }
     },
     {
+        // pass in our imported sequelize connection (the direct connection to our database)
         sequelize,
-        timestamps: false,
+        // don't pluralize name of database table
         freezeTableName: true,
+        // use underscores instead of camel-casing (i.e. `comment_text` and not `commentText`)
         underscored: true,
-        modelName: 'post',
+        // so our model name stays lowercase in the database
+        modelName: 'post'
     }
 );
 
