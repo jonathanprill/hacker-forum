@@ -1,3 +1,141 @@
+:root {
+    --primary-color: #777;
+    --secondary-color: rgb(47, 51, 54);
+    overflow-x: hidden;
+}
+* {
+    box-sizing: border-box;
+}
 body {
-    background-color: gray;
+    height: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    background-color: #1d1d1d;
+    color: var(--primary-color); 
+    font-family: "Open Sans",sans-serif;  
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+   
+}
+
+a:hover {
+    color: #255ea3;
+}
+
+button {
+    background-color: transparent;
+    border: 0;
+   
+    color: var(--primary-color);
+    font-family: "Open Sans",sans-serif;
+    font-size: 18px;
+    cursor: pointer;
+    
+} 
+
+
+h1 {
+    display: flex;
+    justify-content: center;
+}
+
+nav {
+    margin: 0;
+    padding: 10px 0 5px 0;
+}
+
+nav ul {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    list-style: none;
+    padding: 10px;
+    margin: 0 10px;
+    font-size: 18px;
+}
+
+
+
+nav a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+.post {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--secondary-color);
+    width: 70vw;
+}
+
+.title {
+    padding-left: 10px;
+}
+
+li {
+    list-style-type: none;
+}
+
+.meta {
+    align-items: end;
+    padding: 10px;
+}
+
+footer {
+    border-top: 1px solid var(--secondary-color);
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    font-size: 1rem;
+}
+
+/* https://codepen.io/DirkWeber/pen/YzBYWY for glitch effect */
+
+@import "compass/css3";
+
+@import url(https://fonts.googleapis.com/css?family=Share+Tech+Mono);
+
+
+body{
+  background: black;
+}
+
+.info {
+  color: white;
+  font:1em/1 sans-serif;
+  text-align: center;
+}
+
+.info a{
+  color: white;
+}
+
+svg{
+  width: 100%;
+  height: 120px;
+  display: block;
+  position: relative;
+  overflow: hidden; 
+  margin: 0 auto;
+  background: black;
+}
+
+.title-text {
+    filter: url(#filter);
+    fill: white;
+    font-family: 'Share Tech Mono', sans-serif;
+    font-size: 1.5rem;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
