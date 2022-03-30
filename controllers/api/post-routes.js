@@ -98,11 +98,11 @@ router.post('/', withAuth, (req, res) => {
         });
 });
 
-//Update a post
+// Edit or Update a post
 router.put('/:id', withAuth, (req, res) => {
     Post.update(
         {
-            title: req.body.title
+            post_body: req.body.post_body
         },
         {
             where: {

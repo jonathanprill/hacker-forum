@@ -2,17 +2,28 @@
     --primary-color: #777;
     --secondary-color: rgb(47, 51, 54);
     overflow-x: hidden;
+    
 }
+
 * {
     box-sizing: border-box;
 }
-body {
+  
+body, html {
+    background-color: black;
+    max-height: 100%;
     height: 100%;
-    overflow-x: hidden;
+    padding: 0;
     margin: 0;
-    background-color: #1d1d1d;
+    font-family: "Open Sans",sans-serif; 
     color: var(--primary-color); 
-    font-family: "Open Sans",sans-serif;  
+}
+
+.wrapper {
+    
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 a {
@@ -21,14 +32,9 @@ a {
    
 }
 
-a:hover {
-    color: #255ea3;
-}
-
 button {
     background-color: transparent;
     border: 0;
-   
     color: var(--primary-color);
     font-family: "Open Sans",sans-serif;
     font-size: 18px;
@@ -36,25 +42,22 @@ button {
     
 } 
 
-
-h1 {
-    display: flex;
-    justify-content: center;
+a:hover, button:hover{
+    color: #255ea3;
 }
 
 nav {
     margin: 0;
-    padding: 10px 0 5px 0;
+    padding: 10px 50px 5px 50px;   
 }
 
 nav ul {
     padding: 0;
     display: flex;
-    justify-content: center;
 }
 
 nav li {
-    list-style: none;
+    list-style: none;   
     padding: 10px;
     margin: 0 10px;
     font-size: 18px;
@@ -70,6 +73,7 @@ nav a {
 main {
     display: flex;
     justify-content: center;
+    flex: 1;
 }
 
 .post {
@@ -77,6 +81,7 @@ main {
     flex-direction: column;
     border: 1px solid var(--secondary-color);
     width: 70vw;
+    padding-bottom: 10px;
 }
 
 .title {
@@ -100,6 +105,8 @@ footer {
     font-size: 1rem;
 }
 
+/* START GLITCH EFFECT */
+
 /* https://codepen.io/DirkWeber/pen/YzBYWY for glitch effect */
 
 @import "compass/css3";
@@ -107,9 +114,6 @@ footer {
 @import url(https://fonts.googleapis.com/css?family=Share+Tech+Mono);
 
 
-body{
-  background: black;
-}
 
 .info {
   color: white;
@@ -121,7 +125,7 @@ body{
   color: white;
 }
 
-svg{
+svg {
   width: 100%;
   height: 120px;
   display: block;
@@ -135,7 +139,146 @@ svg{
     filter: url(#filter);
     fill: white;
     font-family: 'Share Tech Mono', sans-serif;
-    font-size: 1.5rem;
+    font-size: 30px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    
 }
+
+/* END GLITCH EFFECT */
+
+
+.post-list {
+    padding: 0;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.signup-form {
+    padding: 20px;
+}
+
+textarea, input {
+    padding: 3%;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(31, 30, 30);
+    color: white;
+}
+  
+.login-inputs {
+    padding-bottom: 15px;
+}
+
+/* Dashboard Start*/
+
+.dashboard-page {
+    display: block;
+}
+
+.create-new-post {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.post-button {
+    background-color: #EA8C7B;
+    color: black;
+    border-radius: 3px;
+    margin: 10px 0 0 90%;
+}
+
+.new-post-form {
+    width: 100%;
+}
+
+.post-body-input {
+    width: 100%;
+    height: 100px;
+    padding-top: 0;
+    border-radius: 0 0 5px 5px;
+}
+
+.post-title-input {
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+}
+
+.edit-link {
+    padding-left: 10px;
+}
+
+.each-post {
+    margin-bottom: 40px;
+}
+
+.post-history {
+    margin-top: 65px;
+}
+
+.post-history-title {
+    padding-left: 40px;
+}
+
+/* Dashboard End */
+
+/* Edit Post Start */
+
+.edit-post-page {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.edit-post-form {
+    width: 100%;
+}
+
+.edit-body-input {
+    width: 100%;
+    height: 100px;
+    border-radius: 5px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.edit-post-info {
+    padding: 10px;
+}
+
+/* Edit Post End */
+
+/* Single POST page Start */
+.single-post-page {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+.comment-body {
+    width: 70vw;
+}
+
+.comment-submit-button {
+    padding: 10px 0 50px 40px;
+}
+
+.comment {
+    padding-bottom: 20px;
+}
+
+.comment-text{
+    padding-bottom: 20px;
+    width: 60%;
+    padding-left: 30px;
+    border-bottom: 1px solid var(--secondary-color);;
+}
+/* Single POST page END */
