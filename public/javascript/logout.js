@@ -18,24 +18,24 @@ document.querySelector('#logout').addEventListener('click', logout);
 //SOURCE https://stackoverflow.com/questions/572938/force-logout-users-if-users-are-inactive-for-a-certain-period-of-time
 
 
-// idleTime = 0;
-// $(document).ready(function () {
+idleTime = 0;
+$(document).ready(function () {
 
-//     var idleInterval = setInterval("timerIncrement()", 10000); 
-//     $(this).mousemove(function (e) {
-//         idleTime = 0;
-//     });
-//     $(this).keypress(function (e) {
-//         idleTime = 0;
-//     });
+    var idleInterval = setInterval("timerIncrement()", 10000); 
+    $(this).mousemove(function (e) {
+        idleTime = 0;
+    });
+    $(this).keypress(function (e) {
+        idleTime = 0;
+    });
 
-// });
+});
 
-// function timerIncrement() {
+function timerIncrement() {
 
-//     idleTime = idleTime + 1;
+    idleTime = idleTime + 1;
 
-//     if (idleTime >= 5) {
-//         logout();
-//     }
-// }
+    if (idleTime >= 5) {
+        logout();
+    }
+}
